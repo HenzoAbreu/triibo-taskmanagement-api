@@ -1,0 +1,384 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "triibo",
+    "version": "1.0.0",
+    "contact": {}
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000"
+    }
+  ],
+  "paths": {
+    "/auth/signin": {
+      "post": {
+        "tags": [
+          "auth"
+        ],
+        "summary": "Signin",
+        "description": "Signin",
+        "operationId": "signin",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "type": "string",
+                    "example": "example@gmail.com"
+                  },
+                  "password": {
+                    "type": "string",
+                    "example": "example123"
+                  }
+                }
+              },
+              "example": {
+                "email": "example@gmail.com",
+                "password": "example"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/auth/signup": {
+      "post": {
+        "tags": [
+          "auth"
+        ],
+        "summary": "Signup",
+        "description": "Signup",
+        "operationId": "signup",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "example": "{\r\n    \"username\": \"example\",\r\n    \"email\": \"example@gmail.com\",\r\n    \"password\": \"example123\"\r\n}"
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/auth/change-password": {
+      "put": {
+        "tags": [
+          "auth"
+        ],
+        "summary": "ChangePassword",
+        "description": "ChangePassword",
+        "operationId": "changepassword",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "type": "string",
+                    "example": "example@gmail.com"
+                  },
+                  "newPassword": {
+                    "type": "string",
+                    "example": "example321"
+                  },
+                  "password": {
+                    "type": "string",
+                    "example": "example"
+                  }
+                }
+              },
+              "example": {
+                "email": "example@gmail.com",
+                "newPassword": "example321",
+                "password": "example123"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/user/email": {
+      "put": {
+        "tags": [
+          "user"
+        ],
+        "summary": "Update Email",
+        "description": "Update Email",
+        "operationId": "updateEmail",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "newEmail": {
+                    "type": "string",
+                    "example": "example@gmail.com"
+                  }
+                }
+              },
+              "example": {
+                "newEmail": "example@gmail.com"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/user/username": {
+      "put": {
+        "tags": [
+          "user"
+        ],
+        "summary": "Update Username",
+        "description": "Update Username",
+        "operationId": "updateUsername",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "username": {
+                    "type": "string",
+                    "example": "exampleUsername"
+                  }
+                }
+              },
+              "example": {
+                "newUsername": "exampleUsername"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/user": {
+      "delete": {
+        "tags": [
+          "user"
+        ],
+        "summary": "Delete",
+        "description": "Delete",
+        "operationId": "delete",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/task": {
+      "get": {
+        "tags": [
+          "task"
+        ],
+        "summary": "Get All",
+        "description": "Get All",
+        "operationId": "getAll",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "task"
+        ],
+        "summary": "Create",
+        "description": "Create",
+        "operationId": "create",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "description": {
+                    "type": "string",
+                    "example": "tasktasktask0123"
+                  },
+                  "status": {
+                    "type": "string",
+                    "example": "doing"
+                  },
+                  "title": {
+                    "type": "string",
+                    "example": "task0123"
+                  }
+                }
+              },
+              "example": {
+                "description": "tasktasktask0123",
+                "status": "doing",
+                "title": "task0123"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/task/status/doing": {
+      "get": {
+        "tags": [
+          "task"
+        ],
+        "summary": "Get All By Status",
+        "description": "Get All By Status",
+        "operationId": "getAllByStatus",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/task/46dbbf10-1a90-491c-b377-3245683841c3": {
+      "get": {
+        "tags": [
+          "task"
+        ],
+        "summary": "Get By ID",
+        "description": "Get By ID",
+        "operationId": "getById",
+        "requestBody": {
+          "content": {
+            "text/plain": {
+              "example": ""
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "task"
+        ],
+        "summary": "Update",
+        "description": "Update",
+        "operationId": "update",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "newDescription": {
+                    "type": "string",
+                    "example": "termninar de ler o livro esta semana"
+                  },
+                  "newStatus": {
+                    "type": "string",
+                    "example": "doing"
+                  },
+                  "newTitle": {
+                    "type": "string",
+                    "example": "ler livro harry potter"
+                  }
+                }
+              },
+              "example": {
+                "newDescription": "termninar de ler o livro esta semana",
+                "newStatus": "doing",
+                "newTitle": "ler livro harry potter"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/task/search": {
+      "get": {
+        "tags": [
+          "task"
+        ],
+        "summary": "Search",
+        "description": "Search",
+        "operationId": "search",
+        "parameters": [
+          {
+            "name": "title",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "example": "criar"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/task/6cec17b1-d00b-4ad2-8d25-8ca796192e8b": {
+      "delete": {
+        "tags": [
+          "task"
+        ],
+        "summary": "Delete",
+        "description": "Delete",
+        "operationId": "delete1",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "auth"
+    },
+    {
+      "name": "user"
+    },
+    {
+      "name": "task"
+    }
+  ]
+}
